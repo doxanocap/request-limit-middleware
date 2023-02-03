@@ -8,26 +8,28 @@ This http request limiter were implemented as a middleware package - rlm.
  * Block time increment = 0 sec
 
 # Ways to run project
+Go to the project directory
 ```
 git clone https://github.com/doxanocap/test-task-rlm.git
 cd test-task-rlm
- |
- v
- 
+
+```
+### Run this is you want to set up project as a docker container
+```
 docker compose up
-
-or
-
+```
+### Run project manually  using
+```
 go run main.go
-
-#To run with params
-
-go run main.go -i  A B C
-
+```
+### If you want run project with following params
 where:
-A => input maximum requests per second (int)
-B => input block time for too much request (int)
-C => block time increment (int)
+ * A => input maximum requests per second (int)
+ * B => input block time for too much request (int)
+ * C => block time increment (int)
+   
+```
+ go run main.go -i  A B C
 ```
 
 # Run tests 
