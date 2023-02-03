@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"test-task-rlm/pkg/rllm/models"
+	"test-task-rlm/pkg/rlm/models"
 	"time"
 )
 
-func InitRLM(MaxLimitRate, lockTimeIncrement int, DefaultBlockTime int64) error {
+func InitRLM(MaxLimitRate, BlockTimeIncrement int, DefaultBlockTime int64) error {
 	if MaxLimitRate <= 0 || DefaultBlockTime <= 0 || BlockTimeIncrement <= 0 {
 		return errors.New("invalid params")
 	}
