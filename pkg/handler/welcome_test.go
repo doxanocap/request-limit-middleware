@@ -7,6 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"net/http/httptest"
 	"sync"
+	"test-task-rlm/pkg/handler"
+	"test-task-rlm/pkg/rlm"
 	"testing"
 )
 
@@ -36,11 +38,11 @@ func TestHandler_welcome(t *testing.T) {
 			//Init
 			// Test server
 			r := gin.New()
-			r.POST("/api", handler.Welcome)
-
+			r.Use(rlm.RequestLimitMiddleware)
+			r.GET("/GET", handler.Welcome)
 			// Testing
 			w := httptest.NewRecorder()
-			req := httptest.NewRequest("POST", "/api",
+			req := httptest.NewRequest("GET", "/GET",
 				bytes.NewBufferString(`{"message":"dummy input body"}`))
 
 			// Make request
