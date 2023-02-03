@@ -9,13 +9,18 @@ This http request limiter were implemented as a middleware package - rlm.
 
 # Ways to run project
 ```
+git clone https://github.com/doxanocap/test-task-rlm.git
+cd test-task-rlm
+ |
+ v
+ 
 docker compose up
 
 or
 
 go run main.go
 
-or run with params
+#To run with params
 
 go run main.go -i  A B C
 
